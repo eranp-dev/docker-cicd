@@ -11,7 +11,7 @@ job('NodeJS Docker example') {
   
     steps {
         dockerBuildAndPublish {
-            repositoryName(eranp/jenkins-repo1)
+            repositoryName('eranp/jenkins-repo1')
             tag('${GIT_REVISION,length=9}')
             registryCredentials('2a1f5ff8-b15d-4c4a-a0fe-f763cd47ae16')
             forcePull(false)
