@@ -14,7 +14,7 @@ node {
      }
    }
    stage('docker build/push') {
-       dir("basics")
+      dir("$env{WORKSPACE}/basics")
      docker.withRegistry('https://index.docker.io/v1/', 'dockereran') {
        def app = docker.build("eranp/jenkins-repo1:${commit_id}", '-f Dockerfile .').push()
        def app2 = docker.build("eranp/jenkins-repo1:latest", '-f Dockerfile .').push() 
